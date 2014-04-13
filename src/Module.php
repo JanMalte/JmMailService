@@ -1,6 +1,6 @@
 <?php
 /**
- * Basic Module Class
+ * Basic JmMailService Module Class
  *
  * PHP version 5.3
  *
@@ -21,7 +21,7 @@
  * @author     Malte Gerth <mail@malte-gerth.de>
  * @copyright  2014 Malte Gerth
  * @license    Apache-2.0
- * @link       http://www.malte-gerth.de/
+ * @link       https://github.com/JanMalte/JmMailService
  * @since      2014-04-13
  */
 
@@ -31,12 +31,12 @@ use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;
 
 /**
- * Basic Module Class
+ * Basic JmMailService Module Class
  *
  * @author     Malte Gerth <mail@malte-gerth.de>
  * @copyright  2014 Malte Gerth
  * @license    Apache-2.0
- * @link       http://www.malte-gerth.de/
+ * @link       https://github.com/JanMalte/JmMailService
  * @since      2014-04-13
  */
 class Module implements AutoloaderProviderInterface, ConfigProviderInterface

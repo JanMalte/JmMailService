@@ -1,6 +1,6 @@
 <?php
 /**
- * Load the basic module class for the ZF2
+ * Load the basic JmMailService module class
  *
  * PHP version 5.3
  *
@@ -21,7 +21,7 @@
  * @author     Malte Gerth <mail@malte-gerth.de>
  * @copyright  2014 Malte Gerth
  * @license    Apache-2.0
- * @link       http://www.malte-gerth.de/
+ * @link       https://github.com/JanMalte/JmMailService
  * @since      2014-04-13
  */
 

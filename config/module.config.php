@@ -1,6 +1,6 @@
 <?php
 /**
- * Basic/Default configuration for the module
+ * Basic/Default configuration for the JmMailService module
  *
  * PHP version 5.3
  *
@@ -21,7 +21,7 @@
  * @author     Malte Gerth <mail@malte-gerth.de>
  * @copyright  2014 Malte Gerth
  * @license    Apache-2.0
- * @link       http://www.malte-gerth.de/
+ * @link       https://github.com/JanMalte/JmMailService
  * @since      2014-04-13
  */
 
