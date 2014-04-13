@@ -70,4 +70,14 @@ class Module implements AutoloaderProviderInterface, ConfigProviderInterface
     {
         return include dirname(__DIR__) . '/config/module.config.php';
     }
+
+    /**
+     * Get the service configuration.
+     *
+     * @return array
+     */
+    public function getServiceConfig()
+    {
+        return include dirname(__DIR__) . '/config/service.config.php';
+    }
 }
