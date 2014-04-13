@@ -1,6 +1,6 @@
 <?php
 /**
- * Mail service
+ * Mail service interface
  *
  * PHP version 5.3
  *
@@ -28,7 +28,7 @@
 namespace JanMalte\JmMailService\Service;
 
 /**
- * Mail service
+ * Mail service interface
  *
  * @author     Malte Gerth <mail@malte-gerth.de>
  * @copyright  2014 Malte Gerth
@@ -36,7 +36,7 @@ namespace JanMalte\JmMailService\Service;
  * @link       https://github.com/JanMalte/JmMailService
  * @since      2014-04-13
  */
-class Mail implements MailInterface
+interface MailInterface
 {
 
 }
