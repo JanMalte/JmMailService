@@ -1,6 +1,6 @@
 <?php
 /**
- * Service configuration for the JmMailService module
+ * Mail service
  *
  * PHP version 5.3
  *
@@ -25,11 +25,18 @@
  * @since      2014-04-13
  */
 
-// Services
-return array(
-    'aliases' => array(),
-    'invokables' => array(),
-    'factories' => array(
-        'JanMalte\JmMailService\Service\Mail' => 'JanMalte\JmMailService\Service\MailFactory',
-    ),
-);
+namespace JanMalte\JmMailService\Service;
+
+/**
+ * Mail service
+ *
+ * @author     Malte Gerth <mail@malte-gerth.de>
+ * @copyright  2014 Malte Gerth
+ * @license    Apache-2.0
+ * @link       https://github.com/JanMalte/JmMailService
+ * @since      2014-04-13
+ */
+class Mail
+{
+    
+}

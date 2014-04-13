@@ -1,6 +1,6 @@
 <?php
 /**
- * Service configuration for the JmMailService module
+ * Factory for the mail service
  *
  * PHP version 5.3
  *
@@ -25,11 +25,34 @@
  * @since      2014-04-13
  */
 
-// Services
-return array(
-    'aliases' => array(),
-    'invokables' => array(),
-    'factories' => array(
-        'JanMalte\JmMailService\Service\Mail' => 'JanMalte\JmMailService\Service\MailFactory',
-    ),
-);
+namespace JanMalte\JmMailService\Service;
+
+use Zend\ServiceManager\FactoryInterface;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
+/**
+ * Factory for the mail service
+ *
+ * @author     Malte Gerth <mail@malte-gerth.de>
+ * @copyright  2014 Malte Gerth
+ * @license    Apache-2.0
+ * @link       https://github.com/JanMalte/JmMailService
+ * @since      2014-04-13
+ */
+class MailFactory implements FactoryInterface
+{
+
+    /**
+     * Create service
+     *
+     * @param ServiceLocatorInterface $serviceLocator Service Locator instance
+     *
+     * @return Mail
+     */
+    public function createService(ServiceLocatorInterface $serviceLocator)
+    {
+        $mailService = new Mail();
+
+        return $mailService;
+    }
+}
