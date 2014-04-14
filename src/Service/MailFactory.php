@@ -27,8 +27,11 @@
 
 namespace JanMalte\JmMailService\Service;
 
+use JanMalte\JmMailService\Options\Module as ModuleOptions;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
+use Zend\View\Renderer\PhpRenderer;
+use Zend\View\Renderer\RendererInterface;
 
 /**
  * Factory for the mail service
@@ -51,8 +54,63 @@ class MailFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $mailService = new Mail();
+        // Get the mail module options
+        /* @var $moduleOptions ModuleOptions */
+        $moduleOptions = $serviceLocator->get('JanMalte\JmMailService\Options\Module');
+
+        // Get the mail transport
+        $transport = $serviceLocator->get($moduleOptions->getMailTransportKey());
+
+        // Get the renderer for the templates
+        $renderer = $this->getRenderer($serviceLocator);
+
+        // Get the mail service options
+        $mailServiceOptions = $moduleOptions->getMailService();
+
+        // Create new mail service
+        $mailService = new Mail($mailServiceOptions, $transport, $renderer);
 
         return $mailService;
+    }
+
+    /**
+     * Get the renderer.
+     *
+     * If no renderer is registered, create a new PhpRenderer
+     *
+     * @param ServiceLocatorInterface $serviceLocator Service Locator instance
+     *
+     * @return RendererInterface
+     */
+    protected function getRenderer(ServiceLocatorInterface $serviceLocator)
+    {
+        // Check if a view renderer is available and return it
+        if ($serviceLocator->has('viewrenderer')) {
+            return $serviceLocator->get('viewrenderer');
+        }
+
+        /*
+         * Create a new PhpRenderer and return it if no view renderer was found
+         */
+
+        // Create new PhpRenderer
+        $renderer = new PhpRenderer();
+
+        // Set the view script resolver if available
+        if ($serviceLocator->has('Zend\View\Resolver\AggregateResolver')) {
+            $renderer->setResolver(
+                $serviceLocator->get('Zend\View\Resolver\AggregateResolver')
+            );
+        }
+
+        // Set the view helper manager if available
+        if ($serviceLocator->has('viewhelpermanager')) {
+            $renderer->setHelperPluginManager(
+                $serviceLocator->get('viewhelpermanager')
+            );
+        }
+
+        // Return the new PhpRenderer
+        return $renderer;
     }
 }

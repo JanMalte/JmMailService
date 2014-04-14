@@ -30,6 +30,8 @@ return array(
     'aliases' => array(),
     'invokables' => array(),
     'factories' => array(
+        'JanMalte\JmMailService\Options\Module' => 'JanMalte\JmMailService\Options\ModuleFactory',
         'JanMalte\JmMailService\Service\Mail' => 'JanMalte\JmMailService\Service\MailFactory',
+        'JanMalte\JmMailService\Service\MailTransport' => 'JanMalte\JmMailService\Service\MailTransportFactory',
     ),
 );

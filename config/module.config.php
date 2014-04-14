@@ -24,7 +24,28 @@
  * @link       https://github.com/JanMalte/JmMailService
  * @since      2014-04-13
  */
-
 return array(
+    // Configuration for the mail service
+    'jm-mail-service' => array(
 
+        /*
+         * Mail Transport
+         */
+        'mail_transport_key' => 'JanMalte\JmMailService\Service\MailTransport',
+
+        /*
+         * Mail service options
+         */
+        'mail_service' => array(
+            /*
+             * Defaul from email address if no one ist set
+             */
+            //'default_from' => '',
+
+            /*
+             * Defaul from display name to use, if no one ist set.
+             */
+            //'default_from_name' => '',
+        ),
+    ),
 );
