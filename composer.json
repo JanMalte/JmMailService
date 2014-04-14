@@ -1,0 +1,17 @@
+{
+    "name": "janmalte/jm-mail-service",
+    "description": "ZF2 mail service module to ease the use of ZendMail",
+    "license": "Apache-2.0",
+    "require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "JanMalte\\JmMailService\\": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
