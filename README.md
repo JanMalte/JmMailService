@@ -89,6 +89,7 @@ The Mail Service is registered at the Service Manager and can be retrieved from
 it by calling `get('JanMalte\JmMailService\Service\Mail')`
 
     ```php
+    <?php
     // Get the mail service
     $mailService = $serviceLocator->get('JanMalte\JmMailService\Service\Mail');
     ```
@@ -96,6 +97,7 @@ it by calling `get('JanMalte\JmMailService\Service\Mail')`
 To send a mail message you need only a few commands.
 
     ```php
+    <?php
     // Reset the mail service
     $mailService->reset();
 
@@ -116,13 +118,14 @@ To send a mail message you need only a few commands.
 Method chaning is provided, so you can shorten the commands to the following:
 
     ```php
+    <?php
     // Use the mail service with method chaining
     $mailService->reset()
         ->setTemplate($templateFile)
         ->parseTemplate($templateValues);
 
     // Add a recipient for the message
-    $$mailService->getMailMessage()
+    $mailService->getMailMessage()
         ->setTo($recipientEmail, $recipientName);
 
     // Send the mail message
