@@ -144,7 +144,7 @@ interface MailInterface
      * memory usage.
      *
      * @param string $filePath
-     * @param array $options
+     * @param array  $options
      *
      * @return Mail Provides a fluent interface
      */
